@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "llama-hf-finetune"
+version = "0.1.0"
+description = "A project for fine-tuning and evaluating LLaMa models using Hugging Face."
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+torch = "^1.9.0"  # Adjust based on your CUDA version
+transformers = "^4.15.0"
+datasets = "^1.18.0"
+scikit-learn = "^0.24.2"
+pandas = "^1.3.3"
+numpy = "^1.21.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

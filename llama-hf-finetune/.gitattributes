@@ -1,0 +1,15 @@
+* text=auto
+* eol=lf
+* diff=python
+* merge=python
+* *.py text
+* *.json text
+* *.yaml text
+* *.md text
+* *.csv text
+* *.sh text
+* *.ipynb text
+* *.dockerignore text
+* *.dockerfile text
+* *.yml text
+* *.txt text

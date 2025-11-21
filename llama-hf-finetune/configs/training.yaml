@@ -1,0 +1,16 @@
+batch_size: 16
+learning_rate: 5e-5
+num_epochs: 3
+weight_decay: 0.01
+max_grad_norm: 1.0
+logging_steps: 100
+evaluation_steps: 500
+save_steps: 1000
+seed: 42
+fp16: true
+gradient_accumulation_steps: 2
+model_name_or_path: "facebook/llama-7b"  # Replace with the specific LLaMa model you are using
+output_dir: "./models/llama_finetuned"
+train_file: "../data/splits/train.jsonl"
+validation_file: "../data/splits/val.jsonl"
+test_file: "../data/splits/test.jsonl"

@@ -1,0 +1,22 @@
+input_format: "json"
+output_format: "yaml"
+
+input:
+  inference:
+    model_name: "llama-model"
+    input_format: "text"
+    output_format: "text"
+    max_length: 512
+    temperature: 0.7
+    top_k: 50
+    top_p: 0.95
+    num_return_sequences: 1
+    use_cuda: true
+    device: "cuda"  # or "cpu" if CUDA is not available
+    prompt_prefix: "Input: "
+    prompt_suffix: "\nOutput: "
+    save_output: true
+    output_dir: "./outputs/inference_results"
+    logging:
+      level: "info"
+      log_file: "./logs/inference.log"

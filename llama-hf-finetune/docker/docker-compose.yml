@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  llama-finetune:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./experiments:/app/experiments
+      - ./configs:/app/configs
+      - ./scripts:/app/scripts
+      - ./notebooks:/app/notebooks
+      - ./huggingface:/app/huggingface
+      - ./tests:/app/tests
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["sh", "./scripts/run_training.sh"]
+
+  llama-evaluate:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./experiments:/app/experiments
+      - ./configs:/app/configs
+      - ./scripts:/app/scripts
+      - ./notebooks:/app/notebooks
+      - ./huggingface:/app/huggingface
+      - ./tests:/app/tests
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["sh", "./scripts/run_evaluation.sh"]
+
+  llama-deploy:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./experiments:/app/experiments
+      - ./configs:/app/configs
+      - ./scripts:/app/scripts
+      - ./notebooks:/app/notebooks
+      - ./huggingface:/app/huggingface
+      - ./tests:/app/tests
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["sh", "./scripts/deploy_to_hf.sh"]

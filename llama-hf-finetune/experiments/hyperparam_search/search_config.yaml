@@ -1,0 +1,34 @@
+# Hyperparameter Search Configuration
+
+search:
+  method: grid_search
+  parameters:
+    learning_rate:
+      values: [1e-5, 2e-5, 3e-5]
+    batch_size:
+      values: [8, 16, 32]
+    num_train_epochs:
+      values: [3, 5, 10]
+    weight_decay:
+      values: [0.0, 0.01, 0.1]
+    warmup_steps:
+      values: [0, 500, 1000]
+
+evaluation:
+  metric: accuracy
+  validation_split: val.jsonl
+  test_split: test.jsonl
+
+output:
+  results_file: results/hyperparam_search_results.csv
+  save_best_model: true
+  model_save_path: models/best_model.pt
+
+logging:
+  log_level: info
+  log_file: logs/hyperparam_search.log
+
+resources:
+  max_memory: 16GB
+  gpu: true
+  num_gpus: 1
